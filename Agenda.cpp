@@ -1,12 +1,12 @@
 /*****************************
- Librerï¿½as utilizadas
+ Librerias utilizadas
 *****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
 #include <windows.h>				/*Permite usar comandos de Windows Console*/
 #include <stdio.h>
 
-#define CANTIDAD 500 				/*Cantidad mï¿½xima de contactos: 500*/
+#define CANTIDAD 500 				/*Cantidad maxima de contactos: 500*/
 
 using namespace std;
 
@@ -35,7 +35,7 @@ struct Agenda {
 	string Celular;
 	string Email;
 	Cumple Fecha;					/*Referencia a la estructura Cumple*/
-	Agenda();  						/*Declaraci?n del constructor*/
+	Agenda();  						/*Declaracion del constructor*/
 };
 
 /*****************************
@@ -545,8 +545,8 @@ void Actualizar(struct Agenda Contactos[], int posicion){
 		
 		/*Menï¿½ para seleccionar qu? atributos desean actualizar*/
 		do {
-			cout << "\n\t¿Qué dato le gustaría actualizar de este contacto?" << endl;
-			cout << "  (1)Nombre | (2)Teléfono | (3)Celular (4)Email | (5)Ninguno" << endl;
+			cout << "\n\tï¿½Quï¿½ dato le gustarï¿½a actualizar de este contacto?" << endl;
+			cout << "  (1)Nombre | (2)Telï¿½fono | (3)Celular (4)Email | (5)Ninguno" << endl;
 			cout << Regla << endl;
 			
 			cout << "Esperando respuesta: ";
@@ -711,14 +711,14 @@ bool HayContactos(struct Agenda Contactos[]){
 			c++;
 	
 	if (c > 0)
-		return false; //Está vació
+		return false; //Estï¿½ vaciï¿½
 	
 	return true;
 }
 
 void Detenerse(){
-	cout << "\t¡Presione una tecla para continuar!";
-	system("PAUSE");								/*Pausar la aplicación sin mensaje de salida*/
+	cout << "\tï¿½Presione una tecla para continuar!";
+	system("PAUSE");								/*Pausar la aplicaciï¿½n sin mensaje de salida*/
 }
 
 void LimpiarPantalla(){
@@ -734,8 +734,8 @@ int Salir(){
 	
 	/*Centinela general*/
 	do {
-		cout << "\n\t¿Está seguro(a) de querer hacerlo?" << endl;
-		cout << "\t(1) Sí, (2) No: ";
+		cout << "\n\tï¿½Estï¿½ seguro(a) de querer hacerlo?" << endl;
+		cout << "\t(1) Sï¿½, (2) No: ";
 		cin >> x;
 		
 	} while(x < 1 || x > 2);
