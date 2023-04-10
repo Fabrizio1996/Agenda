@@ -90,7 +90,7 @@ Inicializando la estructura.
 *****************************/
 Agenda::Agenda() {
 	Nombre = " ";								/*Para nombre, dejar un espacio en blanco*/
-	Telefono = "0";								/*Para tel?fono, dejar 0 como contenido*/
+	Telefono = "0";								/*Para telefono, dejar 0 como contenido*/
 	Celular = "0";								/*Para celular, dejar 0 como contenido*/
 	Email = " ";								/*Para email, dejar un espacio en blanco*/
 	Fecha.Nacimiento = " ";							/*Para fecha, dejar un espacio en blanco*/
