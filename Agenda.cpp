@@ -1,5 +1,5 @@
 /*****************************
- Librerï¿½as utilizadas
+ Librerias utilizadas
 *****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
@@ -79,9 +79,9 @@ bool HayContactos(struct Agenda Contactos[]);		/*Verifica si hay contactos en la
 	FUNCIONES SECUNDARIAS
 *****************************/
 void Detenerse();									/*Detiene la ejecuci?n, hasta que se presione una tecla*/
-void LimpiarPantalla();								/*Limpia la pantalla para mostrar un nuevo Menï¿½*/
+void LimpiarPantalla();								/*Limpia la pantalla para mostrar un nuevo Menu*/
 void Dormir(int);									/*Aplica un retraso temporal*/
-int Salir();										/*Centinela que pregunta por la salida de los Menï¿½es*/
+int Salir();										/*Centinela que pregunta por la salida de los Menus*/
 
 /*****************************
  DEFINICI?N DEL CONSTRUCTOR
@@ -115,7 +115,7 @@ int main(int argc, char* argv[]) {
 				x = MenuPrimario();					/*Primer Menu donde la agenda est? vac?a*/
 			} while (x < 1 || x > 2);
 
-			switch (x) {								/*En este Menï¿½ se validan 2 opciones (Insertar, Salir)*/
+			switch (x) {								/*En este Menu se validan 2 opciones (Insertar, Salir)*/
 			case 1:
 				Insertar(Contactos);			/*Menu para insertar datos*/
 				break;
@@ -132,15 +132,15 @@ int main(int argc, char* argv[]) {
 		else {
 			/*Si hay contactos*/
 			do {
-				x = MenuSecundario();				/*Segundo Menï¿½ donde la agenda contiene contactos*/
+				x = MenuSecundario();				/*Segundo Menu donde la agenda contiene contactos*/
 			} while (x < 1 || x > 4);
 
-			switch (x) {								/*Este Menï¿½ contiene mï¿½s opciones (Insertar, buscar, listar)*/
+			switch (x) {								/*Este Menu contiene menus opciones (Insertar, buscar, listar)*/
 			case 1:
 				Insertar(Contactos);
 				break;
 			case 2:
-				Buscar(Contactos);				/*Menu para realizar una bï¿½squeda de contactos por categor?as*/
+				Buscar(Contactos);				/*Menu para realizar una busqueda de contactos por categorias*/
 				break;
 			case 3:
 				Listar(Contactos);				/*Listar todos los contactos existentes de manera interactiva*/
@@ -181,7 +181,7 @@ int MenuPrimario() {
 	cout << "Esperando respuesta: ";
 	cin >> x;
 
-	return x;									/*Convierte y retorna la opci?n seleccionada*/
+	return x;									/*Convierte y retorna la opcion seleccionada*/
 }
 
 int MenuSecundario() {
@@ -211,7 +211,7 @@ void Insertar(struct Agenda Contactos[]) {
 	int x;
 	int salir = 0;						/*bandera para salir*/
 
-	do { 									/*Etiqueta de Menï¿½ para insertar contactos*/
+	do { 									/*Etiqueta de Menu para insertar contactos*/
 
 		/*Se verifica si hay espacio en la agenda*/
 		if (ContactosRegistrados < CANTIDAD) {
@@ -311,7 +311,7 @@ void Buscar(struct Agenda Contactos[]) {
 		LimpiarPantalla();
 
 		do {
-			x = BuscarMenuCategoria();				/*Menu para buscar contactos por categor?as*/
+			x = BuscarMenuCategoria();				/*Menu para buscar contactos por categorias*/
 		} while (x < 1 || x > 5);
 
 		switch (x) {
@@ -319,7 +319,7 @@ void Buscar(struct Agenda Contactos[]) {
 			BuscarPorNombre(Contactos);			/*Buscar por nombre*/
 			break;
 		case 2:
-			BuscarPorTelefono(Contactos);		/*Buscar por tel?fono*/
+			BuscarPorTelefono(Contactos);		/*Buscar por telefono*/
 			break;
 		case 3:
 			BuscarPorCelular(Contactos);		/*Buscar por celular*/
@@ -371,7 +371,7 @@ void BuscarPorNombre(struct Agenda Contactos[]) {
 	/*Recorrer la cantidad de contactos registrados en la agenda*/
 	for (i = 0; i < ContactosRegistrados; i++) {
 		if ((Contactos[i].Nombre == PorNombre)) {				/*Si lo encuentra*/
-			Imprimir(Contactos, i);							/*Muestra la informaci?n del contacto*/
+			Imprimir(Contactos, i);							/*Muestra la informacion del contacto*/
 			c++;
 			break;
 		}
@@ -494,7 +494,7 @@ void Listar(struct Agenda Contactos[]) {
 			cout << "\t\tEmail:    " << Contactos[i].Email << endl;
 			cout << "\t\tFecha N.: " << Contactos[i].Fecha.Nacimiento << endl << endl;
 
-			x++;			/*Incremento de la variable de n?mero de contacto*/
+			x++;			/*Incremento de la variable de numero de contacto*/
 		}
 	}
 
@@ -554,7 +554,7 @@ void Imprimir(struct Agenda Contactos[], int posicion) {
 void Actualizar(struct Agenda Contactos[], int posicion) {
 	int x;
 	string r;
-	string Nombre, Telefono, Celular, Email;			/*Declaraci?n de variables que almacenar?n una copia*/
+	string Nombre, Telefono, Celular, Email;			/*Declaracion de variables que almacenaran una copia*/
 	int salir = 0;                                      /*bandera para salir*/
 
 	do { 												//ActualizarOtroContacto: 
@@ -621,9 +621,9 @@ void Eliminar(struct Agenda Contactos[], int posicion) {
 
 	Nombre = Contactos[posicion].Nombre;
 
-	/*Despu?s de ejecutar la centinela, se resetean los valores de esa posici?n
-	  y no se vuelven a tomar en cuenta. Este algoritmo est? trabajado para que
-	  no perjudique en ning?n momento en la ejecuci?n del programa.
+	/*Despues de ejecutar la centinela, se resetean los valores de esa posicion
+	  y no se vuelven a tomar en cuenta. Este algoritmo este trabajado para que
+	  no perjudique en ningun momento en la ejecucion del programa.
 	*/
 	if (Salir() == 1) {
 		Contactos[posicion].Nombre = " ";
@@ -661,7 +661,7 @@ void CargarContactos(struct Agenda Contactos[]) {
 
 	/*
 	 * Cargar datos por omision para realizar pruebas rapidas de las opciones
-	 * que presenta este programa sobre la gesti?n de contactos de la Agenda.
+	 * que presenta este programa sobre la gestion de contactos de la Agenda.
 	 */
 	do {
 		LimpiarPantalla();
@@ -746,7 +746,7 @@ bool HayContactos(struct Agenda Contactos[]) {
 
 void Detenerse() {
 	cout << "\t¡Presione una tecla para continuar!";
-	system("PAUSE");								/*Pausar la aplicación sin mensaje de salida*/
+	system("PAUSE");								/*Pausar la aplicacion sin mensaje de salida*/
 }
 
 void LimpiarPantalla() {
